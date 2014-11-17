@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Add note</h1>
+    <form action="/note/{{user_id}}/" method="post">
+        <p>Title: <input type="text" name="title"></p>
+        <p>Text: <textarea name="text"></textarea></p>
+        <p><input type="submit" name="submit" value="send"></p>
+    </form>
+
+    {% for note in notes %}
+        <p><i>{{note.note_id}}</i> <b>{{note.title}}</b></p>
+        <p>{{note.text}}</p>
+    {% end %}
+</body>
+</html>
